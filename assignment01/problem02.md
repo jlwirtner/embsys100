@@ -1,4 +1,4 @@
-# *Problem 2
+# *Problem 2*
 
 Why use two's complement to represent negative numbers?
 
