@@ -3,17 +3,17 @@
 ## EU Boom 2 (Bluetooth Speaker)
 
 Bluetooth speakers are fairly simple devices, and the EU Boom is no exception. It has two buttons for controlling volume, one for establishing new connections, and one for power.
-When the device is powered on it playes a chime, and then waits to establish a bluetooth connection with another device. This device can be a computer, phone, or anything that 
+When the device is powered on it playes a chime and then waits to establish a bluetooth connection with another device. This device can be a computer, phone, or anything that 
 can send it audio data via the bluetooth protocol.
 
 I am unfamiliar with the bluetooth protocol (I hope to learn it in this course), but I assume that once a connection is established between the speaker and a music playing device,
-the device continually sends packets to the speaker containing audio data. It also continues to listen for new devices while currently coneected to one.
+the device continually sends packets to the speaker containing audio data. It also continues to listen for new devices while currently connected to one.
 
 Although it is a simple device, it is an embedded system that must run software controlling the establishment of connections and processing of audio data. There must be a 
-Bluetooth receiver peripherial contained in it, and therefore the processor must reading hardware registers to communicate with that. There must be ROM storing the instructions 
+Bluetooth receiver peripherial contained in it, and therefore the processor must read hardware registers to communicate with that. There must be ROM storing the instructions 
 controlling the device, and the sounds that are played at boot and at other times.
 
-Though it interacts with humans, the software is not manually run or can be changed by end users after the speaker is fabricated. Therefore I believe it can still be considered an
+Though it interacts with humans, the software is not manually run or can be changed by end-users after the speaker is fabricated. Therefore I believe it can still be considered an
 embedded system. And like all other embedded systems, it was subject to developmental challanges.
 
 ### Throughput
@@ -23,7 +23,7 @@ of data for the processor to handle at once.
 
 ### Response
 
-Users expect connections to be established quickly, and volume to be adjuct instantaneously. Connections may take longer than normal to establish or require multiple attempts
+Users expect connections to be established quickly, and volume to be adjusted instantaneously. Connections may take longer than normal or require multiple attempts
 to establish sometimes, and I've experienced lag with volume adjustment on multiple occasions.
 
 ### Memory
