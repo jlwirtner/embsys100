@@ -3,5 +3,8 @@
     <project>
         <path>$WS_DIR$\Counter.ewp</path>
     </project>
+    <project>
+        <path>$WS_DIR$\..\..\..\..\Users\Josh\Documents\demo\demo.ewp</path>
+    </project>
     <batchBuild />
 </workspace>
