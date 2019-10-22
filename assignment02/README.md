@@ -25,7 +25,7 @@ the value did not overflow past some semantic limit, but instead needs more bits
 **a.)** The counter variable now has global scope.\
 **b.)** The counter variable is no longer visable in the "locals" view\
 **c.)** The counter variable can now be found in the "Memory" view\
-**d.)** The address for the counter variable is 0x20000000\
+**d.)** The address for the counter variable is 0x20000000
 
 ## Problem 6
 **a.)** Counter = 4\
