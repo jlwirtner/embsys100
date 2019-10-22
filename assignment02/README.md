@@ -1,23 +1,25 @@
 # **Assingment 2**
 
 ## Problem 1
-**a.)** 536870912
-**b.)** 0x20000000
-**c.)** None of the flags are set becuase none of the condions for the flags were meet. The most significant bit (not byte) is still 0, so it does not read it as a negative number. The number is not zero. There was no 
-carry bit, overflow, or saturation either - therefore the Z, C, V, and Q flags are all zero.
+**a.)** -2147483648
+**b.)** 0x80000000
+**c.)** The N and V flags are both set because the value is negative and an overflow occurred. The value is now negative because the most significant bit of 0x80000000 is 1 and because counter is a signed integer, the 
+the processor interprets this as a negative number stored using two's complement. The overflow flag is set because the number overflowed from the maximum positive number, 0x7FFFFFFF, to a negative number.
 
 ## Problem 2
 **a.)** The value becomes 0.
-**b.)** The zero (Z) and carry flags (C) are set in the APSR. This is because we were at the maximum value of a 32 bit integer and we incremented by one. We therefore roll over back to zero, setting the zero flag. The carry flag
- is set because the value rolled over. All other flags are zero.
+**b.)** The N and V flags are both not set. This is because counter is now 0x00000000. Therefore the most significant bit is 0 and the value is positive. The V flag is not set because 0xFFFFFFFF is -1 using two's complement
+ and incrementing -1 simply gives 0.
 
 ## Problem 3
-**a.)** 536870912 (same as problem 1)
-**b.)** None of the flags were set for the same reasons described in 1-c.
+**a.)** 2147483648
+**b.)** The N and the V flag are both set again even though the integer is unsigned. I think that the flags are set because the V is set if the most significant bit changes from 0 to 1, no matter what. And the N is set if
+ the most significant bit is 1, no matter what. It is up to the code to interpret the value as an unsigned integer.
 
 ## Problem 4
 **a.)** 0
-**b.)** The zero and carry flags are set for the same reasons described in 2-b.
+**b.)** The N and V are both not set again. The N is unset for the same reason as 2b, but this time the V flag is not set because the C flag is set instead. This means that a carry occurred instead of an overflow, meaning 
+the value did not overflow past some semantic limit, but instead needs more bits to properly hold the value.
 
 ## Problem 5
 **a.)** The counter variable now has global scope.
