@@ -1,0 +1,240 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  27/Oct/2019  19:34:00
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\Exe\morseBlinker.out
+#    Map file     =
+#        C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\List\morseBlinker.map
+#    Command line =
+#        -f C:\Users\Josh\AppData\Local\Temp\EW5770.tmp
+#        (C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\Obj\main.o
+#        C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\Obj\MorseCode.o
+#        C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\Obj\UserLED.o
+#        --no_out_extension -o
+#        C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\Exe\morseBlinker.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\List\morseBlinker.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.3\arm\config\linker\ST\stm32f401xE.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x807'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address    Size  Object
+  -------   ----         -------    ----  ------
+"A0":                               0x40
+  .intvec   ro code   0x800'0000    0x40  vector_table_M.o [3]
+                    - 0x800'0040    0x40
+
+"P1":                              0x51e
+  .text     ro code   0x800'0040   0x2e0  MorseCode.o [1]
+  .text     ro code   0x800'0320    0x36  strlen.o [3]
+  .text     ro code   0x800'0356    0x1e  strcat.o [2]
+  .text     ro code   0x800'0374    0xbc  main.o [1]
+  .text     ro code   0x800'0430    0x3c  UserLED.o [1]
+  .text     ro code   0x800'046c    0x1e  cmain.o [3]
+  .text     ro code   0x800'048a     0x4  low_level_init.o [2]
+  .text     ro code   0x800'048e     0x4  exit.o [2]
+  .rodata   const     0x800'0492     0x2  MorseCode.o [1]
+  .text     ro code   0x800'0494     0xa  cexit.o [3]
+  .rodata   const     0x800'049e     0x2  MorseCode.o [1]
+  .text     ro code   0x800'04a0    0x14  exit.o [4]
+  .text     ro code   0x800'04b4     0xc  cstartup_M.o [3]
+  .rodata   const     0x800'04c0     0x8  main.o [1]
+  .rodata   const     0x800'04c8     0x8  MorseCode.o [1]
+  .rodata   const     0x800'04d0     0x8  MorseCode.o [1]
+  .rodata   const     0x800'04d8     0x8  MorseCode.o [1]
+  .rodata   const     0x800'04e0     0x8  MorseCode.o [1]
+  .rodata   const     0x800'04e8     0x8  MorseCode.o [1]
+  .rodata   const     0x800'04f0     0x8  MorseCode.o [1]
+  .rodata   const     0x800'04f8     0x8  MorseCode.o [1]
+  .rodata   const     0x800'0500     0x8  MorseCode.o [1]
+  .rodata   const     0x800'0508     0x8  MorseCode.o [1]
+  .rodata   const     0x800'0510     0x8  MorseCode.o [1]
+  .rodata   const     0x800'0518     0x8  MorseCode.o [1]
+  .rodata   const     0x800'0520     0x8  MorseCode.o [1]
+  .rodata   const     0x800'0528     0x4  MorseCode.o [1]
+  .rodata   const     0x800'052c     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0530     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0534     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0538     0x4  MorseCode.o [1]
+  .rodata   const     0x800'053c     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0540     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0544     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0548     0x4  MorseCode.o [1]
+  .rodata   const     0x800'054c     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0550     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0554     0x4  MorseCode.o [1]
+  .rodata   const     0x800'0558     0x2  MorseCode.o [1]
+  .rodata   const     0x800'055a     0x2  MorseCode.o [1]
+  .text     ro code   0x800'055c     0x2  vector_table_M.o [3]
+                    - 0x800'055e   0x51e
+
+"P2":                             0x2000
+  CSTACK             0x2000'0000  0x2000  <Block>
+    CSTACK  uninit   0x2000'0000  0x2000  <Block tail>
+                   - 0x2000'2000  0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'055e   0x807'ffff  0x7'faa2
+  0x2000'2000  0x2001'7fff  0x1'6000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\Obj: [1]
+    MorseCode.o           736      152
+    UserLED.o              60
+    main.o                188        8
+    -------------------------------------------
+    Total:                984      160
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    strcat.o               30
+    -------------------------------------------
+    Total:                 38
+
+rt7M_tl.a: [3]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    strlen.o               54
+    vector_table_M.o       66
+    -------------------------------------------
+    Total:                172
+
+shb_l.a: [4]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Linker created                        8'192
+-----------------------------------------------
+    Grand Total:        1'214      160    8'192
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+?main                    0x800'046d         Code  Gb  cmain.o [3]
+CSTACK$$Base            0x2000'0000          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2000          --   Gb  - Linker created -
+Region$$Table$$Base             0x0          --   Gb  - Linker created -
+Region$$Table$$Limit            0x0          --   Gb  - Linker created -
+__cmain                  0x800'046d         Code  Gb  cmain.o [3]
+__exit                   0x800'04a1   0x14  Code  Gb  exit.o [4]
+__iar_program_start      0x800'04b5         Code  Gb  cstartup_M.o [3]
+__low_level_init         0x800'048b    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  vector_table_M.o [3]
+_call_main               0x800'0479         Code  Gb  cmain.o [3]
+_exit                    0x800'0495         Code  Gb  cexit.o [3]
+_main                    0x800'0487         Code  Gb  cmain.o [3]
+blinkDash                0x800'03e9   0x18  Code  Gb  main.o [1]
+blinkDot                 0x800'03d1   0x18  Code  Gb  main.o [1]
+blinkSentence            0x800'038f   0x42  Code  Gb  main.o [1]
+blinkSpaceLetter         0x800'0401    0xa  Code  Gb  main.o [1]
+blinkSpaceWord           0x800'040b    0xa  Code  Gb  main.o [1]
+convertTextToMorseCode   0x800'0041  0x2e0  Code  Gb  MorseCode.o [1]
+exit                     0x800'048f    0x4  Code  Gb  exit.o [2]
+main                     0x800'0375   0x1a  Code  Gb  main.o [1]
+morseA                   0x800'0528    0x4  Data  Gb  MorseCode.o [1]
+morseB                   0x800'04c8    0x8  Data  Gb  MorseCode.o [1]
+morseC                   0x800'04d0    0x8  Data  Gb  MorseCode.o [1]
+morseD                   0x800'052c    0x4  Data  Gb  MorseCode.o [1]
+morseE                   0x800'0492    0x2  Data  Gb  MorseCode.o [1]
+morseF                   0x800'04d8    0x8  Data  Gb  MorseCode.o [1]
+morseG                   0x800'0530    0x4  Data  Gb  MorseCode.o [1]
+morseH                   0x800'04e0    0x8  Data  Gb  MorseCode.o [1]
+morseI                   0x800'0534    0x4  Data  Gb  MorseCode.o [1]
+morseJ                   0x800'04e8    0x8  Data  Gb  MorseCode.o [1]
+morseK                   0x800'0538    0x4  Data  Gb  MorseCode.o [1]
+morseL                   0x800'04f0    0x8  Data  Gb  MorseCode.o [1]
+morseM                   0x800'053c    0x4  Data  Gb  MorseCode.o [1]
+morseN                   0x800'0540    0x4  Data  Gb  MorseCode.o [1]
+morseO                   0x800'0544    0x4  Data  Gb  MorseCode.o [1]
+morseP                   0x800'04f8    0x8  Data  Gb  MorseCode.o [1]
+morseQ                   0x800'0500    0x8  Data  Gb  MorseCode.o [1]
+morseR                   0x800'0548    0x4  Data  Gb  MorseCode.o [1]
+morseS                   0x800'054c    0x4  Data  Gb  MorseCode.o [1]
+morseSpaceLetter         0x800'0558    0x2  Data  Gb  MorseCode.o [1]
+morseSpaceWord           0x800'055a    0x2  Data  Gb  MorseCode.o [1]
+morseT                   0x800'049e    0x2  Data  Gb  MorseCode.o [1]
+morseU                   0x800'0550    0x4  Data  Gb  MorseCode.o [1]
+morseV                   0x800'0508    0x8  Data  Gb  MorseCode.o [1]
+morseW                   0x800'0554    0x4  Data  Gb  MorseCode.o [1]
+morseX                   0x800'0510    0x8  Data  Gb  MorseCode.o [1]
+morseY                   0x800'0518    0x8  Data  Gb  MorseCode.o [1]
+morseZ                   0x800'0520    0x8  Data  Gb  MorseCode.o [1]
+setupUserLED             0x800'0431   0x16  Code  Gb  UserLED.o [1]
+sleepForNUnits           0x800'0415   0x12  Code  Gb  main.o [1]
+strcat                   0x800'0357   0x1e  Code  Gb  strcat.o [2]
+strlen                   0x800'0321         Code  Gb  strlen.o [3]
+turnOffUserLED           0x800'0453    0xc  Code  Gb  UserLED.o [1]
+turnOnUserLED            0x800'0447    0xc  Code  Gb  UserLED.o [1]
+
+
+[1] = C:\UW_Workspace\embsys100\assignment03\morseBlinker\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  1'214 bytes of readonly  code memory
+    160 bytes of readonly  data memory
+  8'192 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1 @@
+const char* convertTextToMorseCode(const char* str, char* buffer);

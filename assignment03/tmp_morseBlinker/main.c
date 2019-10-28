@@ -1,8 +1,8 @@
+#include <stdio.h>
 #include "MorseCode.h"
-#include "UserLED.h"
 
 #define BUFFER_SIZE 256
-#define SLEEP_UNIT 800000
+#define SLEEP_UNITS 100000000
 
 void blinkSentence(const char* buffer);
 
@@ -18,13 +18,11 @@ void sleepForNUnits(const int n);
 
 int main() {
 
-    const char* myName = "Josh";
+    const char* myName = "Joshua Lee Wirtner";
     char morseCodeBuffer[BUFFER_SIZE];
 
     convertTextToMorseCode(myName, morseCodeBuffer);
-    
-    setupUserLED();
-    
+
     while(1) {
         blinkSentence(morseCodeBuffer);
     }
@@ -33,7 +31,7 @@ int main() {
 }
 
 void blinkSentence(const char* buffer) {
-    int i = 0;
+    size_t i = 0;
     while(buffer[i] != '\0') {
         switch(buffer[i]) {
             case '.':
@@ -57,30 +55,32 @@ void blinkSentence(const char* buffer) {
 }
 
 void blinkDot() {
-    turnOnUserLED();
-    sleepForNUnits(1);
-    turnOffUserLED();
+    printf(".");
+    fflush(stdout);
     sleepForNUnits(1);
 }
 
 void blinkDash() {
-    turnOnUserLED();
-    sleepForNUnits(3);
-    turnOffUserLED();
+    printf("-");
+    fflush(stdout);
     sleepForNUnits(1);
 }
 
 void blinkSpaceLetter() {
+    printf(" ");
+    fflush(stdout);
     sleepForNUnits(2);
 }
 
 void blinkSpaceWord() {
+    printf("\n");
+    fflush(stdout);
     sleepForNUnits(6);
 }
 
 void sleepForNUnits(const int n) {
     int i = 0;
-    while (i < n * SLEEP_UNIT) {
+    while (i < n * SLEEP_UNITS) {
         i++;
     }
 }
