@@ -11,4 +11,4 @@ and special characters in 1840.\
 *source: Wikipedia*
 
 ## Problem 2
-Here is the [Youtube video](https://www.youtube.com/watch?v=T5-8W5OQV48) of the Nucleo's user LED blinking "Josh" in morse code.
+Here is a [Youtube video](https://www.youtube.com/watch?v=T5-8W5OQV48) of the Nucleo's user LED blinking "Josh" in morse code.
