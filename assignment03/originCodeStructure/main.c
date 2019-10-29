@@ -19,8 +19,8 @@ void sleepForNUnits(const int n);
 int main() {
 
     const char* myName = "Josh";
-    char morseCodeBuffer[BUFFER_SIZE];
-
+    char morseCodeBuffer[BUFFER_SIZE] = "\0";
+    
     convertTextToMorseCode(myName, morseCodeBuffer);
     
     setupUserLED();

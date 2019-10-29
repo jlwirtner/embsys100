@@ -1,5 +1,20 @@
-#include "MorseCode.h"
 #include <string.h>
+
+#define RCC_BASE 0x40023800
+#define RCC_AHB1ENR (*((unsigned int*)(RCC_BASE + 0x30)))
+
+#define ENABLE_AHB1 0x1
+
+#define GPIOA_BASE 0x40020000
+#define GPIOA_MODER (*((unsigned int*)(GPIOA_BASE)))
+#define GPIOA_ODR (*((unsigned int*)(GPIOA_BASE + 0x14)))
+
+#define ODR5 0x20
+
+#define MODE5_OUTPUT 0x400
+
+#define BUFFER_SIZE 256
+#define SLEEP_UNIT 800000
 
 const char morseA[] = ".-";
 
@@ -57,7 +72,109 @@ const char morseSpaceLetter[] = "_";
 
 const char morseSpaceWord[] = " ";
 
-const char* convertTextToMorseCode(const char* str, char* buffer) {
+void convertTextToMorseCode(const char* str, char* buffer);
+
+void setupUserLED();
+
+void turnOnUserLED();
+
+void turnOffUserLED();
+
+void blinkSentence(const char* buffer);
+
+void blinkDot();
+
+void blinkDash();
+
+void blinkSpaceLetter();
+
+void blinkSpaceWord();
+
+void sleepForNUnits(const int n);
+
+int main() {
+
+    const char* myName = "Josh";
+    char morseCodeBuffer[BUFFER_SIZE] = "\0";
+    
+    convertTextToMorseCode(myName, morseCodeBuffer);
+    
+    setupUserLED();
+    
+    while(1) {
+        blinkSentence(morseCodeBuffer);
+    }
+
+    return 0;
+}
+
+void blinkSentence(const char* buffer) {
+    int i = 0;
+    while(buffer[i] != '\0') {
+        switch(buffer[i]) {
+            case '.':
+                blinkDot();
+                break;
+            case '-':
+                blinkDash();
+                break;
+            case '_':
+                blinkSpaceLetter();
+                break;
+            case ' ':
+                blinkSpaceWord();
+                break;
+            default:
+                break;
+        }
+        i++;
+    }
+    blinkSpaceWord();
+}
+
+void blinkDot() {
+    turnOnUserLED();
+    sleepForNUnits(1);
+    turnOffUserLED();
+    sleepForNUnits(1);
+}
+
+void blinkDash() {
+    turnOnUserLED();
+    sleepForNUnits(3);
+    turnOffUserLED();
+    sleepForNUnits(1);
+}
+
+void blinkSpaceLetter() {
+    sleepForNUnits(2);
+}
+
+void blinkSpaceWord() {
+    sleepForNUnits(6);
+}
+
+void sleepForNUnits(const int n) {
+    int i = 0;
+    while (i < n * SLEEP_UNIT) {
+        i++;
+    }
+}
+
+void setupUserLED(){
+  RCC_AHB1ENR |= ENABLE_AHB1;
+  GPIOA_MODER |= MODE5_OUTPUT;
+}
+
+void turnOnUserLED() {
+  GPIOA_ODR |= ODR5;
+}
+
+void turnOffUserLED() {
+  GPIOA_ODR &= ~ODR5;
+}
+
+void convertTextToMorseCode(const char* str, char* buffer) {
     int length = strlen(str);
     int current_len = 0;
     for(int i = 0; i < length; i++) {
@@ -177,5 +294,4 @@ const char* convertTextToMorseCode(const char* str, char* buffer) {
         }
         if (i != length - 1 && str[i] != ' ') strcat(buffer, morseSpaceLetter);
     }
-    return buffer;
 }

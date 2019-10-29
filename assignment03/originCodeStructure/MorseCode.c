@@ -57,7 +57,7 @@ const char morseSpaceLetter[] = "_";
 
 const char morseSpaceWord[] = " ";
 
-const char* convertTextToMorseCode(const char* str, char* buffer) {
+void convertTextToMorseCode(const char* str, char* buffer) {
     int length = strlen(str);
     int current_len = 0;
     for(int i = 0; i < length; i++) {
@@ -177,5 +177,4 @@ const char* convertTextToMorseCode(const char* str, char* buffer) {
         }
         if (i != length - 1 && str[i] != ' ') strcat(buffer, morseSpaceLetter);
     }
-    return buffer;
 }
