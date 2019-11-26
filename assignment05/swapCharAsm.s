@@ -37,13 +37,12 @@ Description     : Assembly language function for swapping two chars
     
 /*******************************************************************************
 Function Name   : swapCharAsm
-Description     : Calls C code to swap two chars; 
-                  divides its input argument by 2
-C Prototype     : int div2Asm(val)
-                : Where val is the value to be divided by 2
+Description     : Swaps values pointed to by input arguments 
+C Prototype     : int swapCharAsm(pointer1, pointer2)
+                : where pointer1 points to char1 and pointer2 points to char2
 Parameters      : R0: Address of char1
                 : R1: Address of char2
-Return value    : R0
+Return value    : R0: 0 if char1 and char2 are identical, otherwise 1
 *******************************************************************************/  
   
 swapCharAsm
