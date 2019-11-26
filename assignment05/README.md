@@ -10,17 +10,17 @@ Just prior to calling the swap_pointer() function, main first moves the current 
 **b.)** R0 contains the address at which the pointer to x is stored (pointer to a pointer) and R1 contains the address at which the pointer to y is stored (pointer to a pointer).
 \
 \
-**c.)** Before: ![problem 1 before](pictures/p1_before.png)
+**c.)** Before: ![problem 1 before](pictures/p1_before.PNG)
 \
-After: ![problem 1 after](pictures/p1_after.png)
+After: ![problem 1 after](pictures/p1_after.PNG)
 
 ## Problem 2
-**e.)** ![problem 2](pictures/p2.png)
+**e.)** ![problem 2](pictures/p2.PNG)
 
 ## Problem 3
-**d.)** ![problem 3](pictures/p3.png)
+**d.)** ![problem 3](pictures/p3.PNG)
 
 ## Problem 4
-**c.)** Different characters: ![problem 4 different characters](pictures/p4_diff.png)
+**c.)** Different characters: ![problem 4 different characters](pictures/p4_diff.PNG)
 \
-Same characters: ![problem 4 same characters](pictures/p4_same.png)
+Same characters: ![problem 4 same characters](pictures/p4_same.PNG)
