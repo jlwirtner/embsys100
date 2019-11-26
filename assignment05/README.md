@@ -31,8 +31,8 @@ After:
 ## Problem 4
 **c.)** Different characters: 
 \
-![problem 4 different characters](pictures/p4_diff.PNG)
-\ 
+![problem 4 different characters](pictures/p4_diff.PNG) 
+\
 Same characters: 
 \
 ![problem 4 same characters](pictures/p4_same.PNG)
